@@ -1,0 +1,12 @@
+/var/log/caddy/*/*.log {
+  daily 
+  missingok
+  rotate 180
+  compress
+  compresscmd /usr/bin/xz
+  uncompresscmd /usr/bin/unxz
+  compressext .xz
+  dateext
+  copytruncate
+  notifempty
+}
