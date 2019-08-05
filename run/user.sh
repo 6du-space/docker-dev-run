@@ -44,4 +44,5 @@ sudo docker run \
 mkdir -p $DOCKER_ROOT/root/.ssh
 chmod 700 $DOCKER_ROOT/root/.ssh
 cp ~/.ssh/authorized_keys $DOCKER_ROOT/root/.ssh
+chmod 600 $DOCKER_ROOT/root/.ssh/authorized_keys
 
