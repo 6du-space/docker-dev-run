@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+_dirname=$(realpath $(cd "$(dirname "$0")"; pwd))
+
+cd $_dirname
+
 ID=$1
 HOSTNAME=user-$2
 
@@ -31,6 +35,7 @@ sudo docker run \
 -v $DOCKER_ROOT/etc/caddy:/etc/caddy \
 -v $DOCKER_ROOT/home:/home \
 -v $DOCKER_ROOT/root:/root \
+-v $_dirname/sh:/root/sh \
 -v /tmp/docker/$NAME:/tmp \
 -v /mnt/share:/mnt/share \
 -h $HOSTNAME \
