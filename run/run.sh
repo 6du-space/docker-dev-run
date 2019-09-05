@@ -45,6 +45,7 @@ sudo docker run \
 --device /dev/fuse \
 --cap-add SYS_ADMIN \
 --cap-add NET_ADMIN \
+--device=/dev/net/tun:/dev/net/tun \
 --restart=always $IMAGE
 
 mkdir -p $DOCKER_ROOT/root/.ssh
