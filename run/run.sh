@@ -44,6 +44,7 @@ sudo docker run \
 --ip $SUBNET.$IP \
 --device /dev/fuse \
 --cap-add SYS_ADMIN \
+--cap-add NET_ADMIN \
 --restart=always $IMAGE
 
 mkdir -p $DOCKER_ROOT/root/.ssh
