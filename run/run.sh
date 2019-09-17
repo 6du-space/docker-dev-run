@@ -9,11 +9,12 @@ HOSTNAME=user-$2
 
 let "IP=100+ID"
 let "SSH_PORT=6000+ID"
-let "PORT_BEGIN=10000+1000*PORT_BEGIN"
+let "PORT_BEGIN=10000+1000*ID"
 let "PORT_END=PORT_BEGIN+999"
 
 PORT_RANGE=$PORT_BEGIN-$PORT_END
 
+echo $PORT_RANGE
 NET=6du
 SUBNET=172.20.0
 VPS_IP=$SUBNET.1
@@ -44,6 +45,8 @@ sudo docker run \
 --ip $SUBNET.$IP \
 --device /dev/fuse \
 --cap-add SYS_ADMIN \
+--cap-add NET_ADMIN \
+--device=/dev/net/tun:/dev/net/tun \
 --restart=always $IMAGE
 
 mkdir -p $DOCKER_ROOT/root/.ssh
