@@ -18,7 +18,7 @@ echo $PORT_RANGE
 NET=6du
 SUBNET=172.20.0
 VPS_IP=$SUBNET.1
-IMAGE=daocloud.io/6dus/6du-dev
+IMAGE=registry.cn-qingdao.aliyuncs.com/xvc/docker:lastest
 #IMAGE=dev:latest
 NAME=$HOSTNAME
 
