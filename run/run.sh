@@ -5,7 +5,7 @@ _dirname=$(realpath $(cd "$(dirname "$0")"; pwd))
 cd $_dirname
 
 ID=$1
-HOSTNAME=user-$2
+HOSTNAME=$2
 
 let "IP=100+ID"
 let "SSH_PORT=6000+ID"
