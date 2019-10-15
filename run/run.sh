@@ -22,7 +22,7 @@ IMAGE=registry.cn-qingdao.aliyuncs.com/xvc/docker:lastest
 #IMAGE=dev:latest
 NAME=$HOSTNAME
 
-DOCKER_ROOT=/mnt/docker/$NAME
+DOCKER_ROOT=/mnt/user/$NAME
 
 sudo docker network create --subnet=$SUBNET.0/16 $NET
 sudo docker rm $NAME
